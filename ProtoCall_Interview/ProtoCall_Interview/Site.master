@@ -11,7 +11,7 @@
     <form id="form1" runat="server">
         <div class="content-wrapper">
             <div class="header">
-                <h1>DevExpress ASP.NET project</h1>
+                <h1>Interview Project</h1>
                 <dx:ASPxMenu ID="HeaderMenu" runat="server" ItemAutoWidth="False" Width="100%">
                     <items>
                         <dx:MenuItem Text="Home"></dx:MenuItem>
