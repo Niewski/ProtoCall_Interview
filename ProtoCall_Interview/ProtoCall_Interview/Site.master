@@ -5,18 +5,18 @@
 <head runat="server">
     <meta charset="UTF-8" />
     <title>DevExpress ASP.NET project</title>
-    <link href="~/Content/Site.css" rel="stylesheet" /> 
+    <link href="~/Content/CSS/Site.css" rel="stylesheet" /> 
 </head>
 <body>
     <form id="form1" runat="server">
         <div class="content-wrapper">
             <div class="header">
+                <dx:ASPxImage  runat="server" ImageUrl="~/Content/Images/protocall-logo.png"></dx:ASPxImage>
                 <h1>Interview Project</h1>
                 <dx:ASPxMenu ID="HeaderMenu" runat="server" ItemAutoWidth="False" Width="100%">
                     <items>
-                        <dx:MenuItem Text="Home"></dx:MenuItem>
-                        <dx:MenuItem Text="About"></dx:MenuItem>
-                        <dx:MenuItem Text="Contact"></dx:MenuItem>
+                        <dx:MenuItem Text="Home" NavigateUrl="Default.aspx"></dx:MenuItem>
+                        <dx:MenuItem Text="People" NavigateUrl="People.aspx"></dx:MenuItem>
                     </items>
                     <border borderwidth="0px" />
                     <paddings padding="0px" />
