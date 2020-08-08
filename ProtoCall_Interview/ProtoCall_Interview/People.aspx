@@ -1,7 +1,11 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.master" AutoEventWireup="true" CodeFile="People.aspx.cs" Inherits="People" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" Runat="Server">
-    <dx:ASPxGridView ID="ASPxGridView1" runat="server" AutoGenerateColumns="False" DataSourceID="LocalSQLServer" KeyFieldName="Id" CssClass="grid" >
+    <dx:ASPxGridView ID="ASPxGridView1" runat="server" AutoGenerateColumns="False" DataSourceID="LocalSQLServer" 
+        KeyFieldName="Id" CssClass="grid" OnHtmlRowPrepared="ASPxGridView1_HtmlRowPrepared"
+        OnRowValidating="ASPxGridView1_RowValidating" OnStartRowEditing="ASPxGridView1_StartRowEditing">
+
+        <Settings ShowGroupPanel="True"></Settings>
 
         <SettingsSearchPanel Visible="True"></SettingsSearchPanel>
         <Columns>
@@ -23,18 +27,28 @@
     <asp:SqlDataSource runat="server" ID="LocalSQLServer" ConnectionString='<%$ ConnectionStrings:masterConnectionString_Local %>' 
         SelectCommand="SELECT * FROM [People]" 
         DeleteCommand="DELETE FROM People WHERE (Id = @Id)" 
-        UpdateCommand="spUpdatePerson" UpdateCommandType="StoredProcedure">
+        UpdateCommand="spUpdatePerson" UpdateCommandType="StoredProcedure" 
+        InsertCommand="spCreatePerson" InsertCommandType="StoredProcedure" 
+        ValidateRequestMode="Enabled">
         <DeleteParameters>
             <asp:FormParameter DefaultValue="NULL" FormField="Id" Name="@Id" />
         </DeleteParameters>
+        <InsertParameters>
+            <asp:Parameter Name="FirstName" Type ="String" Size="400"/>
+            <asp:Parameter Name="LastName" Type ="String" Size="400"/>
+            <asp:Parameter Name="PreferredName" Type ="String" Size="256"/>
+            <asp:Parameter Name="BirthDate" Type = "DateTime" />
+            <asp:Parameter Name="PrimaryPhoneNumber" Type ="String" Size="25"/>
+            <asp:Parameter Name="SecondaryPhoneNumber" Type ="String" Size="25"/>
+        </InsertParameters>
         <UpdateParameters>
             <asp:Parameter Name="Id" Type="Int64" />
-            <asp:Parameter Name="FirstName" Type ="String" />
-            <asp:Parameter Name="LastName" Type ="String" />
-            <asp:Parameter Name="PreferredName" Type ="String" />
+            <asp:Parameter Name="FirstName" Type ="String" Size="400"/>
+            <asp:Parameter Name="LastName" Type ="String" Size="400"/>
+            <asp:Parameter Name="PreferredName" Type ="String" Size="256"/>
             <asp:Parameter Name="BirthDate" Type = "DateTime" />
-            <asp:Parameter Name="PrimaryPhoneNumber" Type ="String" />
-            <asp:Parameter Name="SecondaryPhoneNumber" Type ="String" />
+            <asp:Parameter Name="PrimaryPhoneNumber" Type ="String" Size="25" />
+            <asp:Parameter Name="SecondaryPhoneNumber" Type ="String" Size="25" />
         </UpdateParameters>
     </asp:SqlDataSource>
 </asp:Content>
