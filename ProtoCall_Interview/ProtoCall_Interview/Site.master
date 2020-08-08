@@ -11,18 +11,20 @@
     <form id="form1" runat="server">
         <div class="content-wrapper">
             <div class="header">
-                <dx:ASPxImage  runat="server" ImageUrl="~/Content/Images/protocall-logo.png"></dx:ASPxImage>
-                <h1>Interview Project</h1>
-                <dx:ASPxMenu ID="HeaderMenu" runat="server" ItemAutoWidth="False" Width="100%">
-                    <items>
-                        <dx:MenuItem Text="Home" NavigateUrl="Default.aspx"></dx:MenuItem>
-                        <dx:MenuItem Text="People" NavigateUrl="People.aspx"></dx:MenuItem>
-                    </items>
-                    <border borderwidth="0px" />
-                    <paddings padding="0px" />
-                </dx:ASPxMenu>
+                <dx:ASPxImage  runat="server" ImageUrl="~/Content/Images/protocall-logo.png" CssClass="logo"></dx:ASPxImage>
             </div>
-
+            <dx:ASPxMenu ID="Menu" runat="server"  ShowPopOutImages="True" AllowSelectItem="true" CssClass="dxm-Menu">
+                <RootItemSubMenuOffset LastItemX="10" />
+                <SettingsAdaptivity Enabled="true" EnableAutoHideRootItems="true"
+                    EnableCollapseToSideMenu="true" CollapseToSideMenuAtWindowInnerWidth="1024" />
+                <ItemStyle CssClass="dxm-menuItem" />
+                <Items>
+                    <dx:MenuItem Text="Home" ToolTip="Home" NavigateUrl="Default.aspx">
+                    </dx:MenuItem>
+                    <dx:MenuItem Text="People" ToolTip="People" NavigateUrl="People.aspx">
+                    </dx:MenuItem>
+                </Items>
+            </dx:ASPxMenu>
             <div class="content">
                 <asp:ContentPlaceHolder ID="MainContent" runat="server">
                 </asp:ContentPlaceHolder>

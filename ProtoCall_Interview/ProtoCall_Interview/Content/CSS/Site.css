@@ -1,9 +1,11 @@
-﻿html, body
-{
+﻿html, body {
     background-color: #ffffff;
     font: 14px Adobe Garamond Pro, Garamond, sans-serif;
     margin: 0;
     padding: 0;
+    overflow: hidden;
+    min-height: 240px;
+    min-width: 250px;
 }
 h1, h2, h3 {
     font-weight: normal;
@@ -21,11 +23,10 @@ h3
 {
   font-size: 22px;
 }
-.content-wrapper
-{
+.content-wrapper {
     box-sizing: border-box;
-    margin: 0 auto; 
-    padding: 0 12px; 
+    margin: 0 auto;
+    padding: 0 12px;
     width: 100%;
     max-width: 1280px;
 }
@@ -33,9 +34,18 @@ h3
     padding: 12px 0;
 }
 
+.logo {
+    margin-bottom: 25px;
+}
+
+.content {
+    text-align: center;
+}
+
 .footer {
     padding: 12px 0;
     background-color: rgb(134, 132, 164);
+    vertical-align: baseline;
 }
 
 .grid {
@@ -46,4 +56,17 @@ h3
 .grid-header {
     font-weight: bold;
     background-color: #FF9C46;
+}
+
+.dxmLite {
+    background-color: #FF9C46;
+}
+
+.dxm-menuItem {
+    max-width: 80px;
+    background-color: #FF9C46;
+}
+
+.dxm-hovered {
+    background-color: rgb(134, 132, 164);
 }
