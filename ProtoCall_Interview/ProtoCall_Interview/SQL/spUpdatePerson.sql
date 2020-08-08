@@ -49,8 +49,8 @@ BEGIN
 			END
 		ELSE
 			UPDATE People 
-			SET FirstName = @FirstName,
-			LastName = @LastName,
+			SET FirstName = COALESCE(@FirstName, FirstName),
+			LastName = COALESCE(@LastName, LastName),
 			PreferredName = @PreferredName,
 			BirthDate = @BirthDate,
 			PrimaryPhoneNumber = @PrimaryPhoneNumber,
