@@ -1,4 +1,5 @@
 # ProtoCall_Interview
+Author: Jacob Wisniewski
 
 GETTING STARTED <br />
 1-Connect to localhost in SSMS and run Migration.sql from the SQL folder.<br />
